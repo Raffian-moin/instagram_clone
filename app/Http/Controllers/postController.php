@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
-class profileController extends Controller
+class postController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class profileController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +23,7 @@ class profileController extends Controller
      */
     public function create()
     {
-        //
+        return view("posts.create");
     }
 
     /**
@@ -35,8 +34,9 @@ class profileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request->caption;
     }
+
 
     /**
      * Display the specified resource.
@@ -45,9 +45,8 @@ class profileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { 	
-    	$user=User::findOrFail($id);
-        return view('profiles.index',compact("user"));
+    {
+        //
     }
 
     /**

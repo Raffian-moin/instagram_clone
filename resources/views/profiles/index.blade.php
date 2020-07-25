@@ -7,7 +7,7 @@
             <img src="https://instagram.fcgp8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/24125185_1957310201259482_1738255371580997632_n.jpg?_nc_ht=instagram.fcgp8-1.fna.fbcdn.net&_nc_ohc=LkqLQNULdYwAX9ENIJk&oh=f507675219fca14a72b0a09b16a77d3a&oe=5F4652B5" alt="" class="rounded-circle img-fluid">
         </div>
         <div class="col-9 p-5">
-            <div class="d-flex justify-content-between align-items-baseline">
+            <div class="d-flex justify-content-between ">
                 <h1>{{ $user->userName }}</h1>
                 <a href="">Add post</a>
             </div>

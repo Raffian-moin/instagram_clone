@@ -22,3 +22,5 @@ Auth::routes();
 // Route::get('/home', 'profileController@index')->name('home');
 
 Route::resource('profile', 'profileController');
+
+Route::resource('post', 'postController');
