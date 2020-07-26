@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class postController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +40,23 @@ class postController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->caption;
+         $validatedData = $request->validate([
+        'caption' => 'required|max:255',
+        'image' => 'required|',
+        ]);
+
+         $path = $request->file('image')->store('image','public');
+
+         auth()->user()->posts()->create($request->all());
+
+        // $post = new post;
+
+        // $post->name = $request->caption;
+        // $post->image=$request->image;
+
+        // $post->save();
+
+         return redirect()->route('profile.show',Auth()->user());
     }
 
 

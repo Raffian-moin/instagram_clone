@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container col-8 offset-2">
-          <form method="POST" action="{{ route('post.store') }}">
+          <form method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">
             @csrf
 
                         <div class="form-group row">
@@ -21,9 +21,9 @@
                             <label for="exampleFormControlFile1">image</label>
                             <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                             @error('image')
-                                    <span class="invalid-feedback" role="alert">
+                                    
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                
                             @enderror
                        </div>
                         <div class="row mt-3">
